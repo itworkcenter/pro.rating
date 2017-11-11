@@ -25,51 +25,21 @@
                 <p>1、测试后给予展示： 分数低于80展示：你战胜了x%的家长； 分数超过80分给予展示：你战胜了X%家长，获得父母上岗证，只有x%的家长拥有此证。 以下是你选择错误的题目，你可以任意选择其中一道查看详细解析 解析查看完毕，分享本测试到朋友圈，你可以额外获得一次查看详细解析的机会
                 </p>
                 <p>2、转发页面为，测一测，据说只有8%的人拥有【父母上岗证】！</p>
-                <button class="button button-submit">确定</button>
+                <button class="button button-submit">开始</button>
             </div>
-            <div class="questions">
-                <div class="question">
+            <div id="Questions" class="questions">
+                <!-- <div class="question">
                     <h3 class="question-title">每个孩子都喜欢游戏，但是有游戏，就有输赢。有的孩子想玩游戏，又总是怕输，输了就大哭大脑，那么孩子怕输，背后主要是什么原因：</h3>
                     <ul class="question-list">
                         <li>
                             <input type="radio" id="q1" name="q1" />
                             <label for="q1">约定好再多玩多长时间，并开始计时</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q2" name="q1" />
-                            <label for="q2">约定好再多玩多长时间，并开始计时</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q3" name="q1" />
-                            <label for="q3">约定好再多玩多长时间，并开始计时</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q4" name="q1" />
-                            <label for="q4">约定好再多玩多长时间，并开始计时</label>
+                            <div class="question-note">说明：这是危害最大的情况，孩子心中难以形成规则意识</div>
                         </li>
                     </ul>
-                </div>
-                <div class="question">
-                    <h3 class="question-title">每个孩子都喜欢游戏，但是有游戏，就有输赢。有的孩子想玩游戏，又总是怕输，输了就大哭大脑，那么孩子怕输，背后主要是什么原因：</h3>
-                    <ul class="question-list">
-                        <li>
-                            <input type="radio" id="q1" name="q1" />
-                            <label for="q1">约定好再多玩多长时间，并开始计时</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q2" name="q1" />
-                            <label for="q2">约定好再多玩多长时间，并开始计时</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q3" name="q1" />
-                            <label for="q3">约定好再多玩多长时间，并开始计时</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q4" name="q1" />
-                            <label for="q4">约定好再多玩多长时间，并开始计时</label>
-                        </li>
-                    </ul>
-                </div>
+                    <button class="button button-submit">下一题</button>
+                </div> -->
+
             </div>
             <div class="information text-center">
                 <button class="button button-submit">完成</button>
@@ -82,20 +52,304 @@
     </div>
     <div class="process">
         <div class="main">
-            <div class="procesds-count">共计10题</div>
-            <div class="process-items">
-                <div class="process-item finished">1</div>
-                <div class="process-item">1</div>
-                <div class="process-item">1</div>
-                <div class="process-item">1</div>
-                <div class="process-item">1</div>
-                <div class="process-item">1</div>
-                <div class="process-item">1</div>
+            <div class="procesds-count">已完成：
+                <span id="count">0</span> 题, 共计10题 </div>
+            <div id="ProcessItems" class="process-items">
+                <!-- <div class="process-item">1</div> -->
             </div>
-            
+
         </div>
 
     </div>
 </body>
 
 </html>
+
+<script src="js/jquery.min.js"></script>
+
+<script>
+    var questions = [{
+            title: "每个孩子都喜欢游戏，但是有游戏，就有输赢。有的孩子想玩游戏，又总是怕输，输了就大哭大脑，那么孩子怕输，背后主要是什么原因：",
+            options: [{
+                    text: "游戏活动过程缺乏足够的吸引力",
+                    note: "这是一个原因，游戏设计的不够吸引"
+                },
+                {
+                    text: "孩子没有看到过大人示范的面对输赢的做法",
+                    note: "这是一个原因，大人缺乏示范",
+                    right: 1
+                },
+                {
+                    text: "孩子头脑中还没有建立未来的感觉",
+                    note: "这是核心原因，没有建立下一次的感觉"
+                },
+                {
+                    text: "之前输的时候被小朋友嘲笑过",
+                    note: "也有少部分这个情况，但这个情况的核心根源也是没有建立自我意识"
+                },
+            ]
+        },
+        {
+            title: "孩子晚上入睡困难是一个常见的儿童问题，具体表现就是：提各种要求条件不去睡觉、讲个故事吧、再玩10分钟、我想去撒尿……当孩子明确提出，我想再多玩一会儿睡觉的时候，父母比较恰当的做法是：",
+            options: [{
+                    text: "约定好再多玩多长时间，并开始计时",
+                    note: "睡眠、吃饭都是原则性问题，不应该条件交换"
+                },
+                {
+                    text: "直接告知不行，并讲解睡眠对身体健康的道理",
+                    note: "孩子睡前情绪不佳，通常更加影响睡眠质量"
+                },
+                {
+                    text: "答应孩子玩，并提议可以在床上玩并调暗灯光",
+                    note: "智慧的做法，答应并给予有利的条件营造",
+                    right: 1
+                },
+                {
+                    text: "告知应该早一点睡，明天起来有更好玩的事情",
+                    note: "不能从根源改变孩子聚焦眼前的模式"
+                },
+            ]
+        },
+        {
+            title: "“孩子不讲道理”，这是很多父母常说的一句话。无论是哭闹硬要在游乐场玩不回家，还是抢小朋友的玩具打小朋友，或者就是坚持不做一个大人让做的事情，父母不断的尝试说服孩子，讲道理，孩子就是不听，这时，应该怎么办：",
+            options: [{
+                    text: "换一个方式，放慢语速多讲几遍	",
+                    note: "说明：效果有限，下一次还是如此"
+                },
+                {
+                    text: "提高音量，加快语速再讲一遍",
+                    note: "说明：讲了一遍，再讲一遍照样没有效果"
+                },
+                {
+                    text: "不用再讲，看着孩子不说话",
+                    note: "说明：这是比较恰当，可以操作的方法",
+                    right: 1
+                },
+                {
+                    text: "换一个人来再讲一次",
+                    note: "说明：这个做法有一定效果"
+                },
+            ]
+        },
+        {
+            title: "孩子上幼儿园后，家长接孩子会问很多在幼儿园的事情，孩子通常都不喜欢回答，或者很敷衍很简短的回答，比如，大人常问的：今天在幼儿园过的好吗？孩子通常不回答或者就是好。这是什么原因？",
+            options: [{
+                    text: "A.孩子不知道大人说的哪个小朋友	",
+                    note: "这是有可能的，大人不说具体的名字，孩子真不知道说谁"
+                },
+                {
+                    text: "B.孩子不想让大人知道自己的好朋友 ",
+                    note: "孩子还没有形成隐藏的意识"
+                },
+                {
+                    text: "C.孩子自己还不知道好朋友是谁  ",
+                    note: "大人的问题比较抽象，孩子听不懂",
+                    right: 1
+                },
+                {
+                    text: "D.孩子不知道大人说具体是什么意思",
+                    note: "这是多数情况，大人应该问具体的事情，比如玩什么玩具了，跟谁玩的，吃什么了等"
+                },
+            ]
+        },
+        {
+            title: "孩子从3岁左右到5岁，通常都会问这样一类问题：手为什么有十个指头？晚上为什么有月亮？遇到这类问题，父母的回答思路应该是：",
+            options: [{
+                    text: "尊重科学原理查阅资料给孩子讲解",
+                    note: "说明：科学原理要展开到什么程度"
+                },
+                {
+                    text: "鼓励并指导孩子通过网络搜索查找答案",
+                    note: "说明：这个做法可以，不过，找到的答复难以让孩子满意"
+                },
+                {
+                    text: "讨论看到的客观事实",
+                    note: "说明：通过实际操作来验证，而不是固化的知识点",
+                    right: 1
+                },
+                {
+                    text: "告知孩子长大以后就知道了",
+                    note: "说明：这是比较敷衍的回答方式"
+                },
+            ]
+        },
+        {
+            title: "孩子之间争抢玩具是经常发生的事情。有时候孩子正在玩的一个玩具，被另外一个小朋友抢走了，多数情况被抢的小朋友愣愣的呆在那里，大人看到很着急说：你怎么不去抢回来呢？实际上这个时候被抢玩具的孩子脑海里想的是：",
+            options: [{
+                    text: "看看他会怎么玩，反正我也没有新的玩法了",
+                    note: "说明：这是多数情况，一旦看到那个孩子玩的样子挺好，就会去抢回来的"
+                },
+                {
+                    text: "想一下谁能够帮助我要回来",
+                    note: "说明：这是大人的思维方式，不是孩子的"
+                },
+                {
+                    text: "我打不过他，再说那个玩具也没有意思",
+                    note: "说明：孩子也不会有武力的想法，以及武力比较的认识",
+                    right: 1
+                },
+                {
+                    text: "我现在玩的别的吧，想一下玩什么呢",
+                    note: "说明：这个有可能，不过不是常态情况。"
+                },
+            ]
+        },
+        {
+            title: "80后一代的父母经常有说这样的话：我们年轻的时候条件不好，没有好好学习，今天才这个样子。不论是事业上的，还是生活上的，都不太满意。所以，你要好好学习才行。这样的教育属于下列哪类教育？",
+            options: [{
+                    text: "饭碗教育",
+                    note: "说明：这一类通常是：你不好好学习，以后就只能要饭、扫大街。"
+                },
+                {
+                    text: "压力教育 ",
+                    note: "说明：为了别人，为了不是自己的事情，对自己来说，就是一种巨大的压力"
+                },
+                {
+                    text: "竞争教育",
+                    note: "说明：这一类通常是：你看别人XX，他能学好，你怎么不能学好呢？",
+                    right: 1
+                },
+                {
+                    text: "兴趣教育 ",
+                    note: "说明：想想自己的孩子接受过真正的兴趣教育吗？"
+                },
+            ]
+        },
+        {
+            title: "不少家庭现在都有了两个孩子，两个孩子常常因为抢夺一个玩具互相打闹，其中一个哭了，一个还会否认是自己弄的。当两个孩子发生冲突的时候，父母应该做的事情，基础核心原则应该是：",
+            options: [{
+                    text: "了解清楚具体情况，再做判断",
+                    note: "说明：这是对成人纠纷的处理原则"
+                },
+                {
+                    text: "要求大孩子要谦让小的孩子",
+                    note: "说明：这是违背自然属性的道德原则"
+                },
+                {
+                    text: "尽量保护大孩子，要求小的孩子自己解决",
+                    note: "说明：这是最自然和符合发展规律的原则",
+                    right: 1
+                },
+                {
+                    text: "还是要看自己心里喜欢哪个，训斥不喜欢的那个 ",
+                    note: "说明：这种就属于感性任性的原则了"
+                },
+            ]
+        },
+        {
+            title: "孩子对妈妈的认识来源于妈妈与自己在一起的时间中看到妈妈在做的事情，下面四种事情哪一种在孩子眼里占比时间比较多的时候，会让孩子容易形成独立成熟的心理形态？",
+            options: [{
+                    text: "直接与孩子互动以及生活有关的事情",
+                    note: "说明：形成孩子的自我心态，自我意识向内，视觉上没有看到过独立的人的样子"
+                },
+                {
+                    text: "与孩子无关的妈妈自己的事情",
+                    note: "说明：独立的感觉是通过视觉看到后当成理所应当天经地义的样本生根发芽的"
+                },
+                {
+                    text: "与孩子爸爸互动的事情",
+                    note: "说明：这个做法能够让孩子更加独立，缺有一定的残缺",
+                    right: 1
+                },
+                {
+                    text: "与爸妈上一代互动的事情 ",
+                    note: "说明：这种示范会让孩子自闭，独立而失去期待"
+                },
+            ]
+        },
+        {
+            title: "多数情况下，家里都是大人的数量多。孩子眼里就会看到大人之间的相处，孩子能够懂的不是大人之间的权力，而是与自己有关的事情的时候，大人之间意见有不一致，那么，最后谁的决定是最终影响孩子自己的决定，如下哪种情况，对孩子心理健康有积极的意义：",
+            options: [{
+                    text: "每次都是讨论后决定的，不一定是谁",
+                    note: "说明：这种情况孩子长大会有明显的察言观色，缺乏自己的立场和主意的表现"
+                },
+                {
+                    text: "每次都是依据爸爸说的决定的",
+                    note: "说明：与孩子自身有关的事情的决定最好让孩子认识到都是爸爸决定的"
+                },
+                {
+                    text: "每次都是爷爷说的决定的",
+                    note: "说明：这种情况是第二个积极意义的可能",
+                    right: 1
+                },
+                {
+                    text: "每次都是谁说话声音大听谁的",
+                    note: "说明：这是危害最大的情况，孩子心中难以形成规则意识"
+                },
+            ]
+        },
+    ]
+
+    function questionTemplate(data) {
+        var questionStr = "",
+            letter = ["A", "B", "C", "D", "E", "F", "G"],
+            procItemStr = "",
+            itemTempl = function (data) {
+                var liStr = "";
+
+                if (!data.options) {
+                    return;
+                }
+                for (var i = 0; i < data.options.length; i++) {
+                    var json = data.options[i],
+                        id = data.name + i;
+
+                    liStr += '<li ' + (json.right ? 'class="right"' : '') + '><input type="radio" id="' + id +
+                        '" name="' + data.name +
+                        '" value="' + id + '"/><label for="' + id + '">' + letter[i] + '、' + json.text +
+                        '<div class="question-notice">' + json.note + '</div></label></li>'
+                }
+                return liStr;
+            };
+
+        if (!data) {
+            return;
+        }
+
+        for (var i = 0; i < data.length; i++) {
+            var json = data[i];
+
+            json.index = i;
+            json.name = "q" + json.index;
+
+            questionStr += '<div class="question">' +
+                '<a name="aq' + i + '"></a>' +
+                '<h3 class="question-title">' + (i + 1) + '. ' + json.title + '</h3>' +
+                '<ul class="question-list">' + itemTempl(json) + '</ul>' +
+                // '<button class="button button-submit">下一题</button>' +
+                '</div>';
+
+            procItemStr += '<div class="process-item"><a href="#aq' + i + '">' + (i + 1) + '</a></div>'
+        }
+
+        $("#ProcessItems").html(procItemStr);
+
+        return questionStr;
+    }
+    $("#Questions").html(questionTemplate(questions));
+
+    // LOGIC
+    var total = questions.length,
+        count = 0;
+
+    $(document).on("click", ".questions li input", function () {
+        var $this = $(this),
+            $li = $this.closest("li"),
+            $question = $this.closest(".question"),
+            code = $this.val().match(/\d/ig),
+            questionNum = code[0] * 1,
+            optionNum = code[1] * 1;
+
+        if (!$question.hasClass("checked")) {
+            count++;
+            $question.addClass("checked");
+        }
+
+        $li.addClass("active");
+
+        $("#count").html(count);
+
+        $(".process-item").eq(questionNum).addClass("finished");
+
+    })
+</script>

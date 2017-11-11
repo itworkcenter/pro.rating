@@ -1,4 +1,4 @@
-html,
+    html,
 body,
 div,
 p,
@@ -148,7 +148,7 @@ h3 {
 
 .question-list>li>input {
     position: absolute;
-    top: 50%;
+    top: 18px;
     left: 0;
     margin-top: -10px;
     display: block;
@@ -161,6 +161,20 @@ h3 {
     padding: 8px 10px;
     margin-left: 30px;
     cursor: pointer;
+}
+
+.question-notice {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #4caf50;
+}
+
+li.active .question-notice {
+    display: block;
+}
+li.right .question-notice {
+    color: red;
 }
 
 .information>*+* {
@@ -193,26 +207,34 @@ h3 {
     display: inline-block;
     vertical-align: middle;
 }
-.process>.main>* +*  {
+
+.process>.main>*+* {
     margin-left: 20px;
 }
 
 .process-item {
     display: inline-block;
+    margin: 0 1px;
     width: 30px;
     height: 30px;
     line-height: 30px;
-    background: rgba(255,255,255,0.5);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.5);
     color: #000;
     text-align: center;
     cursor: pointer;
+    font-size: 12px;
 }
+.process-item > a {
+   display: block;
+   text-decoration: none;
+}
+
 .process-item.finished {
     display: inline-block;
     width: 30px;
     height: 30px;
     line-height: 30px;
-    background-color: white;
-    color: #000;
+    background-color: white;   color: #000;
     text-align: center;
 }
