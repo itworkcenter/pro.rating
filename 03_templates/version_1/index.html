@@ -25,7 +25,10 @@
                 <p>1、测试后给予展示： 分数低于80展示：你战胜了x%的家长； 分数超过80分给予展示：你战胜了X%家长，获得父母上岗证，只有x%的家长拥有此证。 以下是你选择错误的题目，你可以任意选择其中一道查看详细解析 解析查看完毕，分享本测试到朋友圈，你可以额外获得一次查看详细解析的机会
                 </p>
                 <p>2、转发页面为，测一测，据说只有8%的人拥有【父母上岗证】！</p>
-                <button class="button button-submit">开始</button>
+                <p></p>
+                <strong>【点开后导语】：</strong>
+                <p>这个世界上每个职业都有上岗资格培训，唯独父母这个职业没有上岗考核。据说只有8%的父母才拥有【父母上岗证】。孩子的心理、想法你真的了解吗，你的做法、方法真的正确吗？你敢来挑战吗？</p>
+                <a href="#aq0" class="button button-submit">开始</a>
             </div>
             <div id="Questions" class="questions">
                 <!-- <div class="question">
@@ -313,7 +316,7 @@
             json.name = "q" + json.index;
 
             questionStr += '<div class="question">' +
-                '<a name="aq' + i + '"></a>' +
+                '<a class="locate" name="aq' + i + '"></a>' +
                 '<h3 class="question-title">' + (i + 1) + '. ' + json.title + '</h3>' +
                 '<ul class="question-list">' + itemTempl(json) + '</ul>' +
                 // '<button class="button button-submit">下一题</button>' +
