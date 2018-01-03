@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <title>用户报名</title>
+
+      <!-- Custom styles for this template -->
+      <link href="themes/default/fontawesome/font-awesome.css" rel="stylesheet">
+      <link href="themes/default/bootstrap/bootstrap.min.css" rel="stylesheet">
+      <link href="themes/default/css/page.css" rel="stylesheet">
+
+      <!-- Load Jquery -->
+      <script src="themes/default/js/jquery.min.js"></script>
+      <script src="themes/default/js/jquery.ui.min.js"></script>
+      <script src="themes/default/bootstrap/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+      <div class="page">
+            <div class="page-header">
+                  <div class="page-back"></div>
+                  <div class="page-header-title">用户报名</div>
+            </div>
+            <div class="page-content">
+                  <div class="page-section">
+                        <div class="page-title">请依据孩子年龄段选择对应学阶</div>
+                        <div id="SelectStep" class="page-section-box select-step">
+                              <button type="button" class="btn btn-outline-option btn-block" data-value="4">
+                                    <span>4～6学阶</span>
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline-option btn-block" data-value="6">
+                                    <span>6～9学阶</span>
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline-option btn-block" data-value="9">
+                                    <span>9～12学阶</span>
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                              </button>
+                              <script>
+                                    jQuery("#SelectStep > .btn").click(function () {
+                                          console.log(this);
+
+                                          jQuery(this).addClass("selected").siblings().removeClass(
+                                                "selected");
+                                    })
+                              </script>
+                        </div>
+
+                  </div>
+                  <div class="page-section">
+                        <div class="page-title">请填写您的手机号</div>
+                        <div class="page-section-box">
+                              <div class="input-group">
+                                    <div class="input-group-prepend has-icon">
+                                          <span class="input-group-text" id="basic-addon1">
+                                                <i class="fa fa-mobile" aria-hidden="true"></i>
+                                          </span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Mobile Number" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
+                  </div>
+
+
+            </div>
+            <div class="page-footer">
+                  <button id="Sure" type="button" class="btn btn-confirm btn-block btn-lg">确定</button>
+                  <div class="pop-message" data-toggle="modal" data-target="#pop-massage-sure"></div>
+
+                  <div id="pop-massage-sure" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                              <div class="modal-content">
+                                    <div class="modal-header">
+                                          <h4 class="modal-title" id="myLargeModalLabel">请选择阶段</h4>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                          </button>
+                                    </div>
+                                    
+
+                              </div>
+                        </div>
+                  </div>
+
+                  <script>
+                        $("#Sure").click(function () {
+                              var $selected = $(".select-step > .btn.selected");
+
+                              console.log($selected);
+
+                              if ($selected.size() > 0) {
+                                    location.href = "order.html#" + $selected.data("value");
+                              } else {
+                                    $(this).siblings(".pop-message").click();
+                              }
+                        })
+                  </script>
+            </div>
+      </div>
+</body>
+
+</html>

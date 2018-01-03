@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <title>确认订单</title>
+
+      <!-- Custom styles for this template -->
+      <link href="themes/default/fontawesome/font-awesome.css" rel="stylesheet">
+      <link href="themes/default/bootstrap/bootstrap.min.css" rel="stylesheet">
+      <link href="themes/default/css/page.css" rel="stylesheet">
+
+      <!-- Load Jquery -->
+      <script src="themes/default/js/jquery.min.js"></script>
+      <script src="themes/default/js/jquery.ui.min.js"></script>
+      <script src="themes/default/bootstrap/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+      <div class="page">
+            <div class="page-header">
+                  <div class="page-back"></div>
+                  <script>
+                  $(".page-back").click(function(){
+                        location.href="index.html";
+                  });
+                  </script>
+                  <div class="page-header-title">确认订单</div>
+            </div>
+            <div class="page-content">
+                  <div class="page-section section-white">
+                        <div class="page-title">玩与学 第1期 </div>
+                        <div class="page-section-box">
+                              <div class="items">
+                                    <div class="item">
+                                          <div class="item-image">
+                                                <img src="files/products/product.png" alt="">
+                                          </div>
+                                          <div class="item-content">
+                                                <div class="item-title">伴读经典</div>
+                                                <div class="item-info">已选：【4～6学阶】</div>
+                                                <div class="item-price">
+                                                      <span class="item-price-current">¥199</span>
+                                                      <span class="item-price-count">x1</span>
+                                                </div>
+                                          </div>
+
+                                    </div>
+                              </div>
+                              <div class="sub-total">
+                                    <div class="sub-total-name">商品总价：</div>
+                                    <div class="sub-total-price">¥199</div>
+                              </div>
+                        </div>
+
+                  </div>
+
+
+
+            </div>
+            <div class="page-footer">
+                  <div class="pay-action">
+                        <div class="pay-action-info">
+                              <span class="pay-action-name">商品总价：</span>
+                              <span class="pay-action-price">¥199</span>
+                        </div>
+                        <button id="Sure" type="button" class="btn btn-confirm btn-lg">确定</button>
+                  </div>
+
+                  <script>
+                        $("#Sure").click(function () {
+                              location.href = "order-confirm.html";
+                        })
+                  </script>
+            </div>
+      </div>
+</body>
+
+</html>
