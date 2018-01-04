@@ -3,18 +3,115 @@ body {
       height: 100%;
       background-color: #f6f9ff;
 }
-a{
+
+a {
       color: #222;
 }
+
 ul {
       list-style: none;
       margin: 0;
       padding: 0;
 }
-img{
+
+img {
       max-width: 100%;
       max-height: 100%;
 }
+
+
+/* MODULE */
+
+.date-box:before,
+.date-box:after,
+.date-box-head:before,
+.date-box-head:after,
+.date-box-date:before,
+.date-box-date:after {
+      content: "";
+      display: table;
+      clear: both;
+}
+
+.date-box {
+      background-color: #f6f9ff;
+}
+
+.date-box-summary {
+      display: flex;
+      padding: 10px 20px;
+      background-color: white;
+}
+
+.date-box-summary * {
+      font-size: 13px;
+}
+
+.date-box-summary>.date-box-title {
+      flex-grow: 1;
+}
+
+.date-box-summary>*+* {
+      margin-left: 20px;
+}
+
+.date-box-info>.date-now {
+      margin-right: 5px;
+}
+
+.date-box-head {
+      margin-bottom: 5px;
+      background-color: white;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.date-box-cell {
+      position: relative;
+      float: left;
+      margin-bottom: 5px;
+      width: 14.2857%;
+      text-align: center;
+}
+
+.date-now,
+.date-box-cell>span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #6f8294;
+      border-radius: 40px;
+}
+
+.date-now {
+      cursor: pointer;
+}
+
+.date-now.readed {
+      min-width: 10px;
+      min-height: 10px;
+      background-color: #3366ff;
+      color: white;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.date-now.reread {
+      background-color: #ff9966;
+      color: white;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.date-now.unread {
+      background-color: white;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.date-now.small {
+      height: 10px;
+      width: 10px;
+}
+
 
 /* OVERRIDE */
 
@@ -54,9 +151,11 @@ img{
 }
 
 .card {
+      position: relative;
       display: inline-block;
       padding: 20px 20px 0 20px;
       max-width: 300px;
+      overflow: hidden;
       border: 1px solid #e7ebf3;
       -webkit-box-shadow: 1px 1px 3px #ccc;
       -moz-box-shadow: 1px 1px 3px #ccc;
@@ -71,10 +170,12 @@ img{
       display: flex;
       padding: 20px;
 }
-.card-info-text{
+
+.card-info-text {
       flex-grow: 1;
 }
-.card-normal{
+
+.card-normal {
       padding: 0;
       max-width: none;
       width: 100%;
@@ -82,8 +183,53 @@ img{
       overflow: hidden;
       border-radius: 10px;
 }
-.card-normal img{
+
+.card-normal img {
       width: 100%;
+}
+.card-state{
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 22px;
+      text-align: center;
+      line-height: 20px;
+      background-color: white;
+}
+.card-state i.fa{
+      height: 24px;
+}
+.card-book{
+      padding: 0;
+      width: 160px;
+      height: 190px;
+      border-radius: 10px;
+}
+.card-book > .card-info{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      padding: 5px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+}
+.book-select > .card{
+      margin: 10px;
+}
+.card-book.done{
+      border: 5px solid #3366ff;
+}
+.card-book.done > .card-state{
+      display: block;
+      color:#3366ff;
 }
 .content>*+* {
       margin-top: 10px;
@@ -151,7 +297,7 @@ img{
 .page-nav-item.active,
 .page-nav-item:hover,
 .page-nav-item.active *,
-.page-nav-item:hover *{
+.page-nav-item:hover * {
       color: #06f;
 }
 
@@ -176,9 +322,37 @@ img{
       flex-grow: 1;
 }
 
+.page-title:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      bottom: 10px;
+      width: 5px;
+      background-color: #ff5f00;
+}
+
 .page-title {
-      padding: 10px 5px;
-      border-left: 5px solid #ff5f00;
+      position: relative;
+      display: flex;
+      padding: 10px 20px;
+}
+
+.page-title.blue:before {
+      background-color: #3366ff
+}
+
+.page-title-text {
+      flex-grow: 1;
+}
+
+.page-title-info {
+      color: #999;
+}
+
+.page-title.border {
+      border-bottom: 1px solid #e7ebf3;
 }
 
 .page-section {
@@ -191,45 +365,47 @@ img{
       border-bottom: 1px solid #e7ebf3;
 }
 
-.page-section.section-white .page-title {
-      border-bottom: 1px solid #e7ebf3;
-}
-
 .page-section-box {
       padding: 20px;
 }
-.page-banner{
+
+.page-banner {
       margin-bottom: 20px;
       padding: 20px 20px 0 20px;
       text-align: center;
       background-color: white;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.page-date{
+
+.page-date {
       position: relative;
       margin: 20px 20px;
       text-align: center;
       overflow: hidden;
 }
+
 .page-date:before,
-.page-date:after{
-      content:"";
+.page-date:after {
+      content: "";
       display: block;
       position: absolute;
-      top: 50%; 
+      top: 50%;
       margin-right: -50px;
       width: 50%;
       border-top: 1px solid #ccc;
 }
-.page-date:before{
+
+.page-date:before {
       right: 50%;
       margin-right: 60px;
 }
-.page-date:after{
+
+.page-date:after {
       left: 50%;
       margin-left: 60px;
 }
-.page-date-text{
+
+.page-date-text {
       position: relative;
       padding: 3px 10px;
       display: inline-block;
@@ -238,6 +414,7 @@ img{
       color: white;
       z-index: 10;
 }
+
 .select-step>.btn.selected {
       background-color: #3366ff;
       color: white;
