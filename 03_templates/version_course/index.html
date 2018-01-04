@@ -71,23 +71,6 @@
             <div class="page-footer">
                   <button id="Sure" type="button" class="btn btn-confirm btn-block btn-lg">确定</button>
                   <div class="pop-message" data-toggle="modal" data-target="#pop-massage-sure"></div>
-
-                  <div id="pop-massage-sure" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-sm">
-                              <div class="modal-content">
-                                    <div class="modal-header">
-                                          <h4 class="modal-title" id="myLargeModalLabel">请选择阶段</h4>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">×</span>
-                                          </button>
-                                    </div>
-                                    
-
-                              </div>
-                        </div>
-                  </div>
-
                   <script>
                         $("#Sure").click(function () {
                               var $selected = $(".select-step > .btn.selected");
@@ -101,6 +84,22 @@
                               }
                         })
                   </script>
+            </div>
+      </div>
+
+      <div id="pop-massage-sure" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                              <h4 class="modal-title" id="myLargeModalLabel">请选择阶段</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                              </button>
+                        </div>
+
+
+                  </div>
             </div>
       </div>
 </body>

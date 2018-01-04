@@ -103,8 +103,9 @@ ul {
 
 .page-content {}
 
+.page-nav,
 .page-footer {
-      position: absolute;
+      position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
@@ -294,6 +295,7 @@ ul {
       display: flex;
       border-top: 1px solid #e7ebf3;
       align-items: center;
+      background-color: white;
 }
 
 .pay-action-info {
