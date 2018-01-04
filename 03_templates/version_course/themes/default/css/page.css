@@ -21,7 +21,13 @@ img {
 
 
 /* MODULE */
-
+.badge{
+      padding: 5px 10px;
+      background-color: #999;
+      color: white;
+      border-radius: 30px;
+      font-weight: 100;
+}
 .date-box:before,
 .date-box:after,
 .date-box-head:before,
@@ -112,7 +118,31 @@ img {
       width: 10px;
 }
 
-
+.label{
+      display: inline-block;
+      padding: 2px 5px;
+      font-size: 13px;
+      border-left: 3px solid #ccc;
+      border-radius: 3px;
+      background-color: #e7ebf3;
+}
+.label.yellow{
+      border-color: #f9bd7d;
+      background-color: #ffefe7;
+}
+.label.blue{
+      border-color: #6e99fa;
+      background-color: #e4e9ff;
+      color: #6e99fa;
+}
+.label.red{
+      border-color: #ff8d8d;
+      background-color: #f7e1e1;
+      color: red;
+}
+.label + .label{
+      margin-left: 5px;
+}
 /* OVERRIDE */
 
 .input-group-prepend.has-icon .input-group-text {
@@ -415,6 +445,15 @@ img {
       z-index: 10;
 }
 
+/* PAGE LABEL */
+.page-label{
+      margin: 20px 0;
+}
+.page-label-name{
+      display: inline-block;
+      margin-right: 10px;
+}
+
 .select-step>.btn.selected {
       background-color: #3366ff;
       color: white;
@@ -426,7 +465,9 @@ img {
       color: white;
       font-size: 1.3rem;
 }
-
+.page-article strong{
+      font-weight: 600;
+}
 .select-step>.btn.selected>i.fa {
       visibility: visible;
 }
@@ -548,4 +589,10 @@ img {
 .pay-action-price {
       font-size: 32px;
       color: #ff3300;
+}
+.question-title{
+      margin-bottom: 10px;
+}
+.question-answers{
+      margin-left: 15px;
 }
