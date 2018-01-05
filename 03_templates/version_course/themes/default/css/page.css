@@ -533,7 +533,6 @@ img {
 .item-image {
       min-width: 80px;
       width: 160px;
-      height: 160px;
 }
 
 .item-image>img {
