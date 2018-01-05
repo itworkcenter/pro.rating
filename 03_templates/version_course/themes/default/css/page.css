@@ -21,13 +21,15 @@ img {
 
 
 /* MODULE */
-.badge{
+
+.badge {
       padding: 5px 10px;
       background-color: #999;
       color: white;
       border-radius: 30px;
       font-weight: 100;
 }
+
 .date-box:before,
 .date-box:after,
 .date-box-head:before,
@@ -118,7 +120,7 @@ img {
       width: 10px;
 }
 
-.label{
+.label {
       display: inline-block;
       padding: 2px 5px;
       font-size: 13px;
@@ -126,23 +128,29 @@ img {
       border-radius: 3px;
       background-color: #e7ebf3;
 }
-.label.yellow{
+
+.label.yellow {
       border-color: #f9bd7d;
       background-color: #ffefe7;
 }
-.label.blue{
+
+.label.blue {
       border-color: #6e99fa;
       background-color: #e4e9ff;
       color: #6e99fa;
 }
-.label.red{
+
+.label.red {
       border-color: #ff8d8d;
       background-color: #f7e1e1;
       color: red;
 }
-.label + .label{
+
+.label+.label {
       margin-left: 5px;
 }
+
+
 /* OVERRIDE */
 
 .input-group-prepend.has-icon .input-group-text {
@@ -217,7 +225,8 @@ img {
 .card-normal img {
       width: 100%;
 }
-.card-state{
+
+.card-state {
       display: none;
       position: absolute;
       right: 10px;
@@ -231,16 +240,19 @@ img {
       line-height: 20px;
       background-color: white;
 }
-.card-state i.fa{
+
+.card-state i.fa {
       height: 24px;
 }
-.card-book{
+
+.card-book {
       padding: 0;
       width: 160px;
       height: 190px;
       border-radius: 10px;
 }
-.card-book > .card-info{
+
+.card-book>.card-info {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -251,16 +263,20 @@ img {
       background-color: rgba(0, 0, 0, 0.3);
       color: white;
 }
-.book-select > .card{
+
+.book-select>.card {
       margin: 10px;
 }
-.card-book.done{
+
+.card-book.done {
       border: 5px solid #3366ff;
 }
-.card-book.done > .card-state{
+
+.card-book.done>.card-state {
       display: block;
-      color:#3366ff;
+      color: #3366ff;
 }
+
 .content>*+* {
       margin-top: 10px;
 }
@@ -445,11 +461,14 @@ img {
       z-index: 10;
 }
 
+
 /* PAGE LABEL */
-.page-label{
+
+.page-label {
       margin: 20px 0;
 }
-.page-label-name{
+
+.page-label-name {
       display: inline-block;
       margin-right: 10px;
 }
@@ -465,9 +484,11 @@ img {
       color: white;
       font-size: 1.3rem;
 }
-.page-article strong{
+
+.page-article strong {
       font-weight: 600;
 }
+
 .select-step>.btn.selected>i.fa {
       visibility: visible;
 }
@@ -481,6 +502,32 @@ img {
 
 .item {
       display: flex;
+      align-items: center;
+}
+.item + .item{
+      margin-top: 10px;
+}
+
+.item-icon {
+      min-width: 50px;
+      width: 50px;
+      height: 50px;
+      font-size: 32px;
+      text-align: center;
+      border-radius: 50px;
+}
+
+.item-icon.red {
+      background-color: #ff6666;
+      color: white;
+}
+.item-icon.yellow {
+      background-color: #ffcc33;
+      color: white;
+}
+.item-icon.blue {
+      background-color: #0099ff;
+      color: white;
 }
 
 .item-image {
@@ -503,6 +550,11 @@ img {
 
 .item-content.no-padding {
       padding: 0;
+}
+
+.item-more {
+      cursor: pointer;
+      font-size: 32px;
 }
 
 .item-list>li {
@@ -541,6 +593,10 @@ img {
       flex-grow: 1;
       color: #ff3300;
       font-size: 24px;
+}
+
+.item.item-nav .item-content {
+      padding: 0;
 }
 
 .sub-total {
@@ -591,19 +647,24 @@ img {
       font-size: 32px;
       color: #ff3300;
 }
-.question-title{
+
+.question-title {
       margin-bottom: 10px;
 }
-.question-answers{
+
+.question-answers {
       margin-left: 15px;
 }
 
+
 /* PROFILE */
-.profile{
+
+.profile {
       padding: 20px 20px 0 20px;
       background-color: #0099ff;
 }
-.profile-avator{
+
+.profile-avator {
       margin: 0 auto;
       width: 150px;
       height: 150px;
@@ -611,26 +672,30 @@ img {
       border: 5px solid white;
       overflow: hidden;
 }
-.profile-name{
+
+.profile-name {
       padding: 10px 20px;
       text-align: center;
       color: white;
 }
-.profile-total{
+
+.profile-total {
       display: flex;
       margin-left: -20px;
       margin-right: -20px;
       background-color: white;
 }
-.profile-total-cell{
+
+.profile-total-cell {
       position: relative;
       padding: 20px;
       flex-grow: 1;
       text-align: center;
       font-size: 13px;
 }
-.profile-total-cell + .profile-total-cell:before{
-      content:"";
+
+.profile-total-cell+.profile-total-cell:before {
+      content: "";
       display: block;
       position: absolute;
       left: 0;
@@ -638,11 +703,13 @@ img {
       bottom: 20px;
       border-left: 1px solid #c9d2e5;
 }
-.profile-total-count{
+
+.profile-total-count {
       font-size: 24px;
       font-weight: bold;
       color: #3366ff;
 }
-.profile-total-unit{
+
+.profile-total-unit {
       color: #3366ff;
 }
