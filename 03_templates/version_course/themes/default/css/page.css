@@ -264,8 +264,8 @@ img {
       color: white;
 }
 
-.book-select>.card {
-      margin: 10px;
+.book-select>.card{
+      margin-left: 10px;
 }
 
 .card-book.done {
