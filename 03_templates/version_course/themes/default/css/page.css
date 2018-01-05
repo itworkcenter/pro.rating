@@ -502,7 +502,6 @@ img {
 
 .item {
       display: flex;
-      align-items: center;
 }
 .item + .item{
       margin-top: 10px;
@@ -593,7 +592,9 @@ img {
       color: #ff3300;
       font-size: 24px;
 }
-
+.item.item-nav{
+      align-items: center;
+}
 .item.item-nav .item-content {
       padding: 0;
 }
