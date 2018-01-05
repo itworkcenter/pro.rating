@@ -422,16 +422,16 @@ img {
       background-color: white;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.page-date {
+/* PAGE LINE */
+.page-line {
       position: relative;
       margin: 20px 20px;
       text-align: center;
       overflow: hidden;
 }
 
-.page-date:before,
-.page-date:after {
+.page-line:before,
+.page-line:after {
       content: "";
       display: block;
       position: absolute;
@@ -441,17 +441,17 @@ img {
       border-top: 1px solid #ccc;
 }
 
-.page-date:before {
+.page-line:before {
       right: 50%;
       margin-right: 60px;
 }
 
-.page-date:after {
+.page-line:after {
       left: 50%;
       margin-left: 60px;
 }
 
-.page-date-text {
+.page-line-text {
       position: relative;
       padding: 3px 10px;
       display: inline-block;
@@ -711,4 +711,33 @@ img {
 
 .profile-total-unit {
       color: #3366ff;
+}
+.profile.min{
+      display: flex;
+      padding: 0;
+      background-color: initial;
+      align-items: center;
+}
+.profile.min .profile-avator{
+      width: 50px;
+      height: 50px;
+}
+.profile.min .profile-name{
+      padding: 10px;
+      flex-grow: 1;
+      color: #222;
+      text-align: left;
+}
+/* TABLE BOX */
+.table-box{
+      width: 100%;
+}
+.table-box > thead tr{
+      font-weight: bold;
+}
+.table-box tr:nth-of-type(2n+2){
+      background-color: #f6f9ff;
+}
+.table-box td{
+      text-align: center;
 }
