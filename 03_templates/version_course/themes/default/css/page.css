@@ -312,6 +312,7 @@ img {
       padding: 10px 20px;
       background-color: white;
       border-bottom: 1px solid #e7ebf3;
+      z-index: 200;
 }
 
 .page-header * {
