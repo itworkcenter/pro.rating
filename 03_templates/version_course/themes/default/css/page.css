@@ -165,6 +165,11 @@ img {
       background-color: #ff7001;
       border-color: #ff7001;
 }
+.btn-done {
+      color: #fff;
+      background-color: #3366ff;
+      border-color: #3366ff;
+}
 
 .btn-outline-option {
       background-color: white;
@@ -653,6 +658,10 @@ img {
       color: #ff3300;
 }
 
+/* QUESTION */
+.question + .question{
+      margin-top: 20px;
+}
 .question-title {
       margin-bottom: 10px;
 }
@@ -660,7 +669,35 @@ img {
 .question-answers {
       margin-left: 15px;
 }
-
+.question-answers > li{
+      margin-right: 5px;
+}
+.question-result{
+      text-align: right;
+}
+.question-result-button{
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 15px;
+      border: 1px solid #3366ff;
+      color: #3366ff;
+      cursor: pointer;
+}
+.question-answers.grid{
+      display: flex;
+      align-items: center;
+}
+.question-answers.grid > li{
+      flex-grow: 1;
+      text-align: center;
+}
+.image-card{
+      display: inline-block;
+      max-width: 200px;
+      max-height: 200px;
+      border-radius: 5px;
+      overflow: hidden;
+}
 
 /* PROFILE */
 
