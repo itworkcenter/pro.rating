@@ -824,7 +824,7 @@ img {
       color: white;
 }
 .tips-pop .arrow:after{
-      border-right-color: #ff9999;
+      border-top-color: #ff9999;
 }
 .tips-pop .popover-header,
 .tips-pop{
