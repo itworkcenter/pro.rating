@@ -815,6 +815,34 @@ img {
 .table-box td{
       text-align: center;
 }
+.tips{
+      color: red;
+      cursor: pointer;
+}
+
+.tips-pop *{
+      color: white;
+}
+.tips-pop .arrow:after{
+      border-right-color: #ff9999;
+}
+.tips-pop .popover-header,
+.tips-pop{
+      border: 0;
+      background-color: #ff9999;
+}
+.tips-pop .popover-header{
+      position: relative;
+}
+.tips-pop .popover-header:after{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      left: 10px;
+      border-top: 1px solid #ffcccc;
+}
 @media screen and (max-width: 480px){
       .book{
        width: 50%;     

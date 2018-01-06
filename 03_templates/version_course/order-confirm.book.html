@@ -12,22 +12,12 @@
       <link href="themes/default/bootstrap/bootstrap.min.css" rel="stylesheet">
       <link href="themes/default/css/page.css" rel="stylesheet">
 
-      <!-- Load Jquery -->
-      <script src="themes/default/js/jquery.min.js"></script>
-      <script src="themes/default/js/jquery.ui.min.js"></script>
-      <script src="themes/default/bootstrap/bootstrap.min.js"></script>
-
 </head>
 
 <body>
       <div class="page">
             <div class="page-header">
                   <div class="page-back"></div>
-                  <script>
-                        $(".page-back").click(function () {
-                              location.href = "order-confirm.html";
-                        });
-                  </script>
                   <div class="page-header-title">玩与学-伴读经典</div>
             </div>
             <div class="page-content">
@@ -57,7 +47,9 @@
                                     <div class="label red">生字</div>
                               </div>
                               <div class="page-article">
-                                    <p>从前有个可爱的小姑娘，谁见了都喜欢，但最喜欢她的是她的外婆，简直是她要什么就给她什么。一次，外婆送给小姑娘1顶用丝绒做的小红帽，戴在她的头上正好合适。从此，姑娘再也不愿意戴任何别的帽子，于是大家便叫她“小红帽”。</p>
+                                    
+                                    <p>从前有个可爱的
+                                          <span class="tips" data-content="二上人教版 <br />【jin li】尽着最大的力气 <br />【jin li】用一切力气">小姑娘</span> ，谁见了都喜欢，但最喜欢她的是她的外婆，简直是她要什么就给她什么。一次，外婆送给小姑娘1顶用丝绒做的小红帽，戴在她的头上正好合适。从此，姑娘再也不愿意戴任何别的帽子，于是大家便叫她“小红帽”。</p>
                                     <p>一天，妈妈对
                                           <strong>小红帽</strong> 说：“来，小红帽，这里有一块蛋糕和一瓶葡萄酒，快给外婆送去，外婆生病了，身子很虚弱，吃了这些就会好一些的。趁着现在天还没有黑，赶紧动身吧。在路上要好好走，不要跑，也不要离开大路，否则你会摔跤的，那样外婆就什么也吃不上了。到外婆家的时候，别忘了说‘早上好’，也不要一进屋就东瞧西瞅。”</p>
                                     <p>“我会小心的。”小红帽对妈妈说，并且还和妈妈拉手作保证。</p>
@@ -159,6 +151,30 @@
                   <button id="Sure" type="button" class="btn btn-done btn-block btn-lg">完成今日伴读</button>
             </div>
       </div>
+
+
+      '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>
 </body>
 
 </html>
+<!-- Load Jquery -->
+<script src="themes/default/js/jquery.min.js"></script>
+<script src="themes/default/bootstrap/popper.js"></script>
+<script src="themes/default/bootstrap/bootstrap.min.js"></script>
+
+<script>
+      $('.tips').popover({
+            container: 'body',
+            title: "说明",
+            html: true,
+            template: '<div class="popover tips-pop" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+      })
+      $(document).click(function (e) {
+            if (e.target.className != "tips") {
+                  $('.tips').popover("hide");
+            }
+      })
+      $(".page-back").click(function () {
+            location.href = "order-confirm.html";
+      });
+</script>
