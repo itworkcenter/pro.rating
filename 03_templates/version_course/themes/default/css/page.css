@@ -192,6 +192,22 @@ img {
       color: #999;
       text-align: center;
 }
+.sqr{
+      position: relative;
+      width: 100%;
+}
+.sqr:before{
+      content: "";
+      display: block;
+      padding-top: 100%;
+}
+.sqr-inner{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+}
 
 .card {
       position: relative;
@@ -252,12 +268,14 @@ img {
 
 .card-book {
       padding: 0;
-      max-width: 160px;
-      max-height: 190px;
+      margin-bottom: 10px;
       border-radius: 10px;
 }
+.card-book.sqr:before {
+       padding-top: 117%;
+}
 
-.card-book>.card-info {
+.card-book .card-info {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -268,16 +286,28 @@ img {
       background-color: rgba(0, 0, 0, 0.3);
       color: white;
 }
+.card-book .card-image img {
+      width: 100%;
+}
 
-.book-select>.card{
-      margin-left: 10px;
+.books:after,
+.books:before{
+      content:"";
+      display: table;
+      clear: both;
+}
+.book{
+      float: left;
+      padding: 5px;
+      width: 33.3333%;
+      box-sizing: border-box;
 }
 
 .card-book.done {
       border: 5px solid #3366ff;
 }
 
-.card-book.done>.card-state {
+.card-book.done .card-state {
       display: block;
       color: #3366ff;
 }
@@ -786,13 +816,7 @@ img {
       text-align: center;
 }
 @media screen and (max-width: 480px){
-      .card-book{
-            max-width: 120px;
-            height: 140px;
-      }
-  }
-@media screen and (max-width: 320px){
-      .card-book{
-            
+      .book{
+       width: 50%;     
       }
   }
