@@ -252,8 +252,8 @@ img {
 
 .card-book {
       padding: 0;
-      width: 160px;
-      height: 190px;
+      max-width: 160px;
+      max-height: 190px;
       border-radius: 10px;
 }
 
@@ -785,3 +785,14 @@ img {
 .table-box td{
       text-align: center;
 }
+@media screen and (max-width: 480px){
+      .card-book{
+            max-width: 120px;
+            height: 140px;
+      }
+  }
+@media screen and (max-width: 320px){
+      .card-book{
+            
+      }
+  }
